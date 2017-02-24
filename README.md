@@ -20,6 +20,7 @@ Scheggia uses only core .net functionalities, so it runs perfectly also on mono 
 
 The ScheggiaText project is a demo app that implements in a single executable all the functionalities of a search engine: index, merge/update, search.
 
+```
 >ScheggiaText.exe
 Command: (just hit return to exit)
 Usage:
@@ -32,17 +33,19 @@ Print all hits:       -dh <[path]indexName> <fieldname>
 Merge indexes:        -m  <[path]targetIndexName> <[path]indexToMerge>+
 Update indexes:       -u  <[path]targetIndexName> <[path]indexToUpdate>+
 Append indexes:       -a  <[path]targetIndexName> <[path]indexToAppend>+
+```
 
 ### Index
 
 Given a set of textual document in a directory ./data , an index is created by the command:
 
+```
 >ScheggiaText.exe -i 12 3 10 single index data
 +(data)..................................................
 Input data acquired in xx.xx seconds.
-
 yyy files (zzzzz hits) indexed in kkk.kkkk seconds.
 >
+```
 
 where the difference between 'single' and 'split' in the fact the a single file is used to store document and position info for words in 'single', while in 'split' this information is stored in two different files.
 The 'single' setup should have a better performance when proximity and phrase are very frequent, whereas 'split' should work better when simple boolean queries are dominant.
@@ -50,6 +53,7 @@ Apart from this efficiency aspect, the fact that an index is 'single' or 'split'
 
 The content of an index can be inspected with the -df -dl -dp -dh flags:
 
+```
 >ScheggiaText.exe -df index
 Index name:     index
 MaxId:  11
@@ -58,6 +62,7 @@ Fields count:   1
         Lexicon type:   System.String
         Hit type:       Esuli.Scheggia.Text.Core.PositionHit
 Press enter to exit.
+```
 
 A scheggia index is structured in fields, which acts as a distinct indexing space. 
 This feature can be used to separately index, and then search, different parts of documents.
