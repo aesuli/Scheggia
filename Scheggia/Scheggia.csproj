@@ -1,0 +1,184 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{582B93CA-9182-4F35-86F1-06C3DEE2C245}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Esuli.Scheggia</RootNamespace>
+    <AssemblyName>Esuli.Scheggia</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="src\Esuli\Base\Collections\HeapUtils_Titem.cs" />
+    <Compile Include="src\Esuli\Base\Collections\Heap_Titem.cs" />
+    <Compile Include="src\Esuli\Base\Comparers\KeyValuePairKeyComparer_Tkey_Tvalue.cs" />
+    <Compile Include="src\Esuli\Base\Comparers\KeyValuePairKeyExternalComparer_Tkey_Tvalue.cs" />
+    <Compile Include="src\Esuli\Base\Comparers\KeyValuePairKeyReverseComparer_Tkey_Tvalue.cs" />
+    <Compile Include="src\Esuli\Base\Comparers\KeyValuePairKeyReverseExternalComparer_Tkey_Tvalue.cs" />
+    <Compile Include="src\Esuli\Base\Comparers\OrdinalStringComparer.cs" />
+    <Compile Include="src\Esuli\Base\Enumerators\IntEnumeratorOffset.cs" />
+    <Compile Include="src\Esuli\Base\Enumerators\IntRangeEnumerator.cs" />
+    <Compile Include="src\Esuli\Base\IO\IObjectSerialization_Tobject.cs" />
+    <Compile Include="src\Esuli\Base\IO\ISequentialObjectSerialization_Tobject.cs" />
+    <Compile Include="src\Esuli\Base\IO\SequentialStringSerialization.cs" />
+    <Compile Include="src\Esuli\Base\IO\Storage\Constants.cs" />
+    <Compile Include="src\Esuli\Base\IO\Storage\ISequentiallyWriteableStorage_Tobject.cs" />
+    <Compile Include="src\Esuli\Base\IO\Storage\ReadOnlyStorage_Tobject.cs" />
+    <Compile Include="src\Esuli\Base\IO\Storage\SequentialWriteOnlyStorage_Tobject.cs" />
+    <Compile Include="src\Esuli\Base\IO\Storage\StorageUpdate_Tobject.cs" />
+    <Compile Include="src\Esuli\Base\IO\Storage\StorageMerge_Tobject.cs" />
+    <Compile Include="src\Esuli\Base\IO\StringSerialization.cs" />
+    <Compile Include="src\Esuli\Base\IO\TypeSerialization.cs" />
+    <Compile Include="src\Esuli\Base\IO\VariableByteCoding.cs" />
+    <Compile Include="src\Esuli\Scheggia\Core\Field_Titem_Thit.cs" />
+    <Compile Include="src\Esuli\Scheggia\Core\IField.cs" />
+    <Compile Include="src\Esuli\Scheggia\Core\IField_Titem_Thit.cs" />
+    <Compile Include="src\Esuli\Scheggia\Core\IHitEnumerator.cs" />
+    <Compile Include="src\Esuli\Scheggia\Core\IHitEnumeratorState.cs" />
+    <Compile Include="src\Esuli\Scheggia\Core\IHitEnumeratorState_Thit.cs" />
+    <Compile Include="src\Esuli\Scheggia\Core\IHitEnumerator_Thit.cs" />
+    <Compile Include="src\Esuli\Scheggia\Core\IPostingEnumerator.cs" />
+    <Compile Include="src\Esuli\Scheggia\Core\IPostingEnumeratorState.cs" />
+    <Compile Include="src\Esuli\Scheggia\Core\IPostingEnumeratorState_Thit.cs" />
+    <Compile Include="src\Esuli\Scheggia\Core\IPostingEnumerator_Thit.cs" />
+    <Compile Include="src\Esuli\Scheggia\Core\IPostingListProvider.cs" />
+    <Compile Include="src\Esuli\Scheggia\Core\IPostingListProvider_Thit.cs" />
+    <Compile Include="src\Esuli\Scheggia\Core\IIndex.cs" />
+    <Compile Include="src\Esuli\Scheggia\Core\ILexicon.cs" />
+    <Compile Include="src\Esuli\Scheggia\Core\ILexicon_Titem_Tcomparer.cs" />
+    <Compile Include="src\Esuli\Scheggia\Core\Index.cs" />
+    <Compile Include="src\Esuli\Scheggia\Core\ArrayLexicon_Titem_Tcomparer.cs" />
+    <Compile Include="src\Esuli\Scheggia\Core\ArrayPostingListProvider_Thit.cs" />
+    <Compile Include="src\Esuli\Scheggia\Enumerators\EmptyPostingEnumerator_Thit.cs" />
+    <Compile Include="src\Esuli\Scheggia\Enumerators\RemappedPostingEnumerator.cs" />
+    <Compile Include="src\Esuli\Scheggia\Enumerators\RemappedPostingEnumerator_Thit.cs" />
+    <Compile Include="src\Esuli\Scheggia\IO\StreamPostingListProviderSerialization_Thit_ThitSerialization.cs" />
+    <Compile Include="src\Esuli\Scheggia\IO\ILexiconSerialization.cs" />
+    <Compile Include="src\Esuli\Scheggia\IO\IPostingListProviderSerialization_Thit.cs" />
+    <Compile Include="src\Esuli\Scheggia\Merge\UpdatedField_Titem_ThitInfo.cs" />
+    <Compile Include="src\Esuli\Scheggia\Merge\OffLineIndexUpdater.cs" />
+    <Compile Include="src\Esuli\Scheggia\Merge\OnLineIndexUpdater.cs" />
+    <Compile Include="src\Esuli\Scheggia\Tools\RenamedIndex.cs" />
+    <Compile Include="src\Esuli\Scheggia\Core\ScoreFunction.cs" />
+    <Compile Include="src\Esuli\Scheggia\Enumerators\AndPostingEnumerator.cs" />
+    <Compile Include="src\Esuli\Scheggia\Enumerators\AndPostingEnumerator_Thit.cs" />
+    <Compile Include="src\Esuli\Scheggia\Enumerators\AscendingPostingEnumeratorComparer.cs" />
+    <Compile Include="src\Esuli\Scheggia\Enumerators\CutoffPostingEnumerator.cs" />
+    <Compile Include="src\Esuli\Scheggia\Enumerators\CutoffPostingEnumerator_Thit.cs" />
+    <Compile Include="src\Esuli\Scheggia\Enumerators\DescendingPostingEnumeratorComparer.cs" />
+    <Compile Include="src\Esuli\Scheggia\Enumerators\EmptyHitEnumerator.cs" />
+    <Compile Include="src\Esuli\Scheggia\Enumerators\EmptyHitEnumerator_Thit.cs" />
+    <Compile Include="src\Esuli\Scheggia\Enumerators\EmptyPostingEnumerator.cs" />
+    <Compile Include="src\Esuli\Scheggia\Enumerators\ArrayHitEnumerator_Thit.cs" />
+    <Compile Include="src\Esuli\Scheggia\Enumerators\HitListEnumerator.cs" />
+    <Compile Include="src\Esuli\Scheggia\Enumerators\HitListEnumerator_Thit.cs" />
+    <Compile Include="src\Esuli\Scheggia\Enumerators\ArrayHitEnumeratorMerger.cs" />
+    <Compile Include="src\Esuli\Scheggia\Enumerators\ArrayHitEnumeratorMerger_Thit.cs" />
+    <Compile Include="src\Esuli\Scheggia\Enumerators\ArrayPostingEnumerator_Thit.cs" />
+    <Compile Include="src\Esuli\Scheggia\Enumerators\IPositionalHit_Thit.cs" />
+    <Compile Include="src\Esuli\Scheggia\Enumerators\OffsetPostingEnumerator.cs" />
+    <Compile Include="src\Esuli\Scheggia\Enumerators\OffsetPostingEnumerator_Thit.cs" />
+    <Compile Include="src\Esuli\Scheggia\Enumerators\OrPostingEnumerator.cs" />
+    <Compile Include="src\Esuli\Scheggia\Enumerators\OrPostingEnumerator_Thit.cs" />
+    <Compile Include="src\Esuli\Scheggia\Enumerators\ProximityHitEnumerator_Thit.cs" />
+    <Compile Include="src\Esuli\Scheggia\Enumerators\ProximityPostingEnumerator_Thit.cs" />
+    <Compile Include="src\Esuli\Scheggia\Enumerators\RangePostingEnumerator.cs" />
+    <Compile Include="src\Esuli\Scheggia\Enumerators\RangePostingEnumerator_Thit.cs" />
+    <Compile Include="src\Esuli\Scheggia\Enumerators\ScoreSortedPostingEnumerator.cs" />
+    <Compile Include="src\Esuli\Scheggia\Enumerators\ScoreSortedPostingEnumerator_Thit.cs" />
+    <Compile Include="src\Esuli\Scheggia\Enumerators\SequenceHitEnumerator_Thit.cs" />
+    <Compile Include="src\Esuli\Scheggia\Enumerators\SequencePostingEnumerator_Thit.cs" />
+    <Compile Include="src\Esuli\Scheggia\Indexing\OnLineFieldIndexer_Titem_Thit.cs" />
+    <Compile Include="src\Esuli\Scheggia\Indexing\IOnLineFieldIndexer.cs" />
+    <Compile Include="src\Esuli\Scheggia\Indexing\IIndexer.cs" />
+    <Compile Include="src\Esuli\Scheggia\Indexing\IOffLineIndexer.cs" />
+    <Compile Include="src\Esuli\Scheggia\Indexing\IOnLineIndexer.cs" />
+    <Compile Include="src\Esuli\Scheggia\Indexing\LexiconBuilder_Titem_Tcomparer.cs" />
+    <Compile Include="src\Esuli\Scheggia\Indexing\OffLineIndexer.cs" />
+    <Compile Include="src\Esuli\Scheggia\Indexing\OnLineIndexer.cs" />
+    <Compile Include="src\Esuli\Scheggia\Indexing\ParallelOffLineIndexer.cs" />
+    <Compile Include="src\Esuli\Scheggia\Indexing\ReaderHit_Titem_Thit.cs" />
+    <Compile Include="src\Esuli\Scheggia\IO\ByteArrayHitEnumerator_Thit.cs" />
+    <Compile Include="src\Esuli\Scheggia\IO\DefaultLexiconSerialization.cs" />
+    <Compile Include="src\Esuli\Scheggia\IO\DummyHitEnumeratorSerialization_Thit.cs" />
+    <Compile Include="src\Esuli\Scheggia\IO\FieldMetaData_Titem_Tcomparer_Thit.cs" />
+    <Compile Include="src\Esuli\Scheggia\IO\FieldSerialization_Titem_Tcomparer_Thit.cs" />
+    <Compile Include="src\Esuli\Scheggia\IO\HitEnumeratorSerialization_Thit_ThitSerialization.cs" />
+    <Compile Include="src\Esuli\Scheggia\IO\IFieldMetaData.cs" />
+    <Compile Include="src\Esuli\Scheggia\IO\IFieldSerialization.cs" />
+    <Compile Include="src\Esuli\Scheggia\IO\IHitEnumeratorSerialization_Thit.cs" />
+    <Compile Include="src\Esuli\Scheggia\IO\IPostingEnumeratorSerialization.cs" />
+    <Compile Include="src\Esuli\Scheggia\IO\IPostingEnumeratorSerialization_Thit.cs" />
+    <Compile Include="src\Esuli\Scheggia\IO\IIndexReader.cs" />
+    <Compile Include="src\Esuli\Scheggia\IO\IIndexWriter.cs" />
+    <Compile Include="src\Esuli\Scheggia\IO\IndexMetaData.cs" />
+    <Compile Include="src\Esuli\Scheggia\IO\StreamPostingListProvider_Thit.cs" />
+    <Compile Include="src\Esuli\Scheggia\IO\HitEnumerator_Thit.cs" />
+    <Compile Include="src\Esuli\Scheggia\IO\SingleStreamPostingEnumeratorSerialization_Thit_ThitSerialization.cs" />
+    <Compile Include="src\Esuli\Scheggia\IO\SingleStreamPostingEnumerator_Thit.cs" />
+    <Compile Include="src\Esuli\Scheggia\IO\SingleStreamSkipListPostingEnumerator_Thit.cs" />
+    <Compile Include="src\Esuli\Scheggia\IO\SplitHitPostingEnumeratorSerialization_Thit_ThitSerialization.cs" />
+    <Compile Include="src\Esuli\Scheggia\IO\SplitHitPostingEnumerator_Thit.cs" />
+    <Compile Include="src\Esuli\Scheggia\IO\SplitHitSkipListPostingEnumerator_Thit.cs" />
+    <Compile Include="src\Esuli\Scheggia\IO\IndexReader.cs" />
+    <Compile Include="src\Esuli\Scheggia\IO\IndexWriter.cs" />
+    <Compile Include="src\Esuli\Scheggia\Merge\MergedField_Titem_ThitInfo.cs" />
+    <Compile Include="src\Esuli\Scheggia\Merge\MergedLexiconEnumerator_Titem_Tcomparer.cs" />
+    <Compile Include="src\Esuli\Scheggia\Merge\MergeType.cs" />
+    <Compile Include="src\Esuli\Scheggia\Merge\OffLineIndexMerger.cs" />
+    <Compile Include="src\Esuli\Scheggia\Merge\OnLineIndexMerger.cs" />
+    <Compile Include="src\Esuli\Scheggia\Scoring\ScoreFunctions.cs" />
+    <Compile Include="src\Esuli\Scheggia\Search\AndQuery.cs" />
+    <Compile Include="src\Esuli\Scheggia\Search\AndQuery_Thit.cs" />
+    <Compile Include="src\Esuli\Scheggia\Search\IQuery.cs" />
+    <Compile Include="src\Esuli\Scheggia\Search\IQueryParser_Tquery.cs" />
+    <Compile Include="src\Esuli\Scheggia\Search\IQuery_Thit.cs" />
+    <Compile Include="src\Esuli\Scheggia\Search\OrQuery.cs" />
+    <Compile Include="src\Esuli\Scheggia\Search\OrQuery_Thit.cs" />
+    <Compile Include="src\Esuli\Scheggia\Search\ProximityQuery_Thit.cs" />
+    <Compile Include="src\Esuli\Scheggia\Search\SequenceQuery_Thit.cs" />
+    <Compile Include="src\Esuli\Scheggia\Search\SimpleQuery_Titem_Thit.cs" />
+    <Compile Include="src\Esuli\Scheggia\Text\Core\LabeledPositionHit.cs" />
+    <Compile Include="src\Esuli\Scheggia\Text\Core\PositionHit.cs" />
+    <Compile Include="src\Esuli\Scheggia\Text\Indexing\TextReader.cs" />
+    <Compile Include="src\Esuli\Scheggia\Text\IO\LabeledPositionHitSerialization.cs" />
+    <Compile Include="src\Esuli\Scheggia\Text\IO\PositionHitSerialization.cs" />
+    <Compile Include="src\Esuli\Scheggia\Text\Scoring\ScoreFunctions.cs" />
+    <Compile Include="src\Esuli\Scheggia\Text\Search\PrefixQuery_Tcomparer_Thit.cs" />
+    <Compile Include="src\Esuli\Scheggia\Text\Search\TextQueryParser_Tcomparer.cs" />
+    <Compile Include="src\Esuli\Scheggia\Tools\PrettyPrint.cs" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

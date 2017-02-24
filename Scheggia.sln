@@ -1,0 +1,40 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 14
+VisualStudioVersion = 14.0.23107.0
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Scheggia", "Scheggia\Scheggia.csproj", "{582B93CA-9182-4F35-86F1-06C3DEE2C245}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SapirTextIndex", "SapirTextIndex\SapirTextIndex.csproj", "{CC1A680D-F142-41AB-96EB-EC252DC9E113}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{D5F8B711-9852-49DC-B6CF-C53250281846}"
+	ProjectSection(SolutionItems) = preProject
+		LICENSE = LICENSE
+		README.md = README.md
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ScheggiaText", "ScheggiaText\ScheggiaText.csproj", "{FDEA670F-C47E-455C-A8F9-25C566FEB446}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{582B93CA-9182-4F35-86F1-06C3DEE2C245}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{582B93CA-9182-4F35-86F1-06C3DEE2C245}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{582B93CA-9182-4F35-86F1-06C3DEE2C245}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{582B93CA-9182-4F35-86F1-06C3DEE2C245}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CC1A680D-F142-41AB-96EB-EC252DC9E113}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CC1A680D-F142-41AB-96EB-EC252DC9E113}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CC1A680D-F142-41AB-96EB-EC252DC9E113}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CC1A680D-F142-41AB-96EB-EC252DC9E113}.Release|Any CPU.Build.0 = Release|Any CPU
+		{FDEA670F-C47E-455C-A8F9-25C566FEB446}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FDEA670F-C47E-455C-A8F9-25C566FEB446}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FDEA670F-C47E-455C-A8F9-25C566FEB446}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FDEA670F-C47E-455C-A8F9-25C566FEB446}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

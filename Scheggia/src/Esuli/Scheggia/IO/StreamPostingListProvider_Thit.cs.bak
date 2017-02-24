@@ -1,0 +1,71 @@
+// Copyright (C) 2015 Andrea Esuli
+// http://www.esuli.it
+//
+// This program is free software: you can redistribute it and/or modify
+// it under the terms of the GNU General Public License as published by
+// the Free Software Foundation, either version 3 of the License, or
+// (at your option) any later version.
+//
+// This program is distributed in the hope that it will be useful,
+// but WITHOUT ANY WARRANTY; without even the implied warranty of
+// MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+// GNU General Public License for more details.
+//
+// You should have received a copy of the GNU General Public License
+// along with this program.  If not, see <http://www.gnu.org/licenses/>.
+
+namespace Esuli.Scheggia.IO
+{
+    using System;
+    using System.IO;
+    using Esuli.Scheggia.Core;
+    
+    public class StreamPostingListProvider<Thit> : IPostingListProvider<Thit>
+    {
+        private long[]idToPositionMapping;
+        private Stream primaryStream;
+        private Stream secondaryStream;
+        private IPostingEnumeratorSerialization<Thit> postingEnumeratorSerialization;
+
+        public StreamPostingListProvider(long[] idToPositionMapping, Stream primaryStream, Stream secondaryStream, IPostingEnumeratorSerialization<Thit> postingEnumeratorSerialization)
+        {
+            this.idToPositionMapping = idToPositionMapping;
+            this.primaryStream = primaryStream;
+            this.secondaryStream = secondaryStream;
+            this.postingEnumeratorSerialization = postingEnumeratorSerialization;
+        }
+           
+        public IPostingEnumerator<Thit> GetSpecializedPostingEnumerator(int enumeratorId, int postingListId)
+        {
+            return postingEnumeratorSerialization.SpecializedRead(enumeratorId, idToPositionMapping[postingListId], primaryStream, secondaryStream, false, false);
+        }
+
+        public IPostingEnumerator GetPostingEnumerator(int enumeratorId, int postingListId)
+        {
+            return GetSpecializedPostingEnumerator(enumeratorId, postingListId);
+        }
+
+        public void Dispose()
+        {
+            Dispose(true);
+            GC.SuppressFinalize(this);
+        }
+
+        protected virtual void Dispose(bool disposing)
+        {
+            if (disposing)
+            {
+                primaryStream.Dispose();
+                secondaryStream.Dispose();
+            }
+        }
+
+        public int Count
+        {
+            get
+            {
+                return idToPositionMapping.Length;
+            }
+        }
+    }
+}
